@@ -1,0 +1,43 @@
+* {
+    margin: 0%;
+    /* padding: 0%; */
+    box-sizing: border-box;
+}
+
+
+.event-card-wrapper {
+    display: flex ;
+  
+   
+}
+
+.event-card { 
+    max-width: 250px;
+    height: 100%;
+    text-align: center;
+    /* height: 20%; */
+    /* border: 1.5px solid black; */
+    border-radius: 5px;
+    margin-right:  1rem;
+
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 10px, rgba(0, 0, 0, 0.03) 0px 0px 2px;
+    /* padding: 2rem; */
+    /* margin: 1rem; */
+     /* flex-grow: 1; */
+    
+}
+
+.event-category-img {
+    max-width: 100%;
+    object-fit: cover;
+
+}
+
+.event-title {
+    font-size: 1.5rem;
+}

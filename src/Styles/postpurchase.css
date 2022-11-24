@@ -1,0 +1,15 @@
+.ticket {
+    border: 1px solid #000;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.ticket-container {
+
+}
+
+.thanks {
+    margin: 0 auto;
+    width: 50%;
+}

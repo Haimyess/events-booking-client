@@ -1,0 +1,10 @@
+.sidebar-container {
+    margin-right: 3rem;
+    /* flex-grow: 1; */
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+
+}

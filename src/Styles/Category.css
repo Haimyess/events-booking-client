@@ -1,0 +1,109 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.category-wrapper {
+    /* border: 3px solid red; */
+    /* margin: .5rem 3rem; */
+    width: 70%;
+    margin: 2rem auto;
+}
+.category-title {
+    margin: 2rem 0 1.4rem 0;
+}
+.subcategory-chips {
+    padding: .5rem 1rem;
+    /* margin: 1rem .2rem 1.4rem .2rem; */
+    background-color: #fff;
+    border: none;
+    /* border: 1.5px solid #2e4866 ; */
+    border-radius: 30px;
+    color: #2e4866 ;
+    transition: .3s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: .9rem;
+    font-weight: 450;
+}
+
+.subcategory-chips:hover {
+
+    color: #fff;
+    background-color: #2e4866;
+
+}
+
+.subcategory-chips:focus{
+    color: #fff;
+    background-color: #2e4866;
+}
+.subcategory-chips:target{
+    color: #fff;
+    background-color: #2e4866;
+}
+.subcategory-chips:active{
+    color: #fff;
+    background-color: #2e4866;
+}
+
+.subcategories-filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.filter-category {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.filters-select {
+    display: flex;
+}
+
+.date-btn {
+    border: none;
+    background-color: #fff;
+    border: 1px solid #2e4866;
+    color: #2e4866;
+    font-size: 1rem;
+    padding: .6rem .4rem;
+}
+
+.filter-specific-day-btn {
+    border: none;
+    background-color:  #2e4866;
+    /* border: 1px solid #2e4866; */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: .9rem;
+    padding: .3rem .4rem;
+    margin: .3rem;
+    transition: .5s;
+    /* font-weight: 400; */
+}
+
+.filter-specific-day-btn:hover {
+    background-color: #fff;
+    color: #2e4866;
+}
+
+/* .filter-specific-day-btn.active { */
+     /* background-color: #2e4866; */
+/* } */
+.filter-day-btn-wrapper {
+    /* border: 1px solid #2e4866; */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+.event-img {
+    max-width: 100%;
+    border: none;
+    padding: none;
+}
