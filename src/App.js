@@ -2,7 +2,6 @@
 
 // importing bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 
 // importing SWIPER
 // eslint-disable-next-line
