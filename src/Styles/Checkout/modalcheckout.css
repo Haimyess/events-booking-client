@@ -1,19 +1,16 @@
 
-/* #2e4866 */
 
 .modal-wrapper {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    border: 1px solid green;
-    transform: translate(-50%, -50%); */
+
     display: flex;
     justify-content: center;
    
 }
+
 .checkout-title-container {
     border-bottom: 1px solid #9999
 }
+
 .ticket-checkout-image {
     max-width: 100%;
 }
@@ -25,16 +22,12 @@
 
 .main-checkout {
     width: 500px;
-    /* padding-right: 2rem; */
-
 
 }
 
 .summary-checkout {
     width: 350px;
     border-left: 1px solid #5555;
-
-
 }
 
 .checkout-btn-container {
@@ -53,13 +46,9 @@
     background-color:#2e4866;
     color: #fff;
 
-
 }
 
 .checkout-title {
     text-align: center;
 }
 
-/* .ticket-checkout-sub {
-    
-} */

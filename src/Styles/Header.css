@@ -7,14 +7,13 @@
 
 .logo {
     max-width: 10vw;
-    /* margin: 1rem 0 0 0 ; */
-    /* border: 1px solid red; */
 }
 
 .container {
     margin: 0 auto;
     width: 90%;
 }
+
 .flex {
     display: flex;
     justify-content: space-between;
@@ -22,16 +21,12 @@
     align-items: baseline;
     width: 70%;
     margin: 0 auto;
-     /* line-height: 0; */
-
-
 }
 
 .wrapper {
     width: 100%;
     margin:  0 auto;
     padding: 0%;
-    /* position: relative; */
     position: -webkit-sticky;
     position:sticky;
     top:0;
@@ -46,20 +41,19 @@
 }
 
 .header-right > *{
-
-   
     margin: 0 .4rem;
     text-decoration: none;
     color: #2e4866;
 }
 
 .header-right {
-        display: flex;
+    display: flex;
 }
 
 .line {
     margin: 0%;
 }
+
 .business-link {
     font-weight: bold;
 
@@ -70,29 +64,18 @@
    
 }
 
-/* .join-btn {
-    
-} */
-/* .login-btn {
-
-
-    
-} */
-
 .login-nav {
     display: flex;
     flex-direction: column;
 }
+
 .login-nav-container {
     position: relative;
- 
- 
 }
 
 .login-nav-wrapper {
     position: absolute;
     right: 0;
-    /* top: 1; */
     padding: 0 10px;
     border-radius: 20px;
     background-color: rgb(245, 245, 245);
