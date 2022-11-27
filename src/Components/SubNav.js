@@ -4,11 +4,14 @@ import { EventsContext } from "../Contexts/EventsContext";
 import React, { useState, useContext } from "react";
 // import { Link } from "react-router-dom";
 
+// Styles
+import Skeleton from "@mui/material/Skeleton";
 import "../Styles/subnav.css";
 import CategoryLink from "./CategoryLink";
 
 function SubNav() {
-  const [events, setEvents] = useContext(EventsContext);
+  const { events, setEvents, isLoading, setIsLoading } =
+    useContext(EventsContext);
 
   // const eventType = "event_type";
 
@@ -36,9 +39,13 @@ function SubNav() {
   // }
   return (
     <div className='subnav-link-container'>
-      {uniqueCategories.map((event) => {
-        return <CategoryLink key={event.event_id} events={event} />;
-      })}
+      {isLoading ? (
+        <Skeleton variant='text' width={30} height={10} />
+      ) : (
+        uniqueCategories.map((event) => {
+          return <CategoryLink key={event.event_id} events={event} />;
+        })
+      )}
     </div>
   );
 }

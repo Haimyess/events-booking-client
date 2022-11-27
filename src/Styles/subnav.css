@@ -3,6 +3,7 @@
   font-size: 1.2rem;
   text-decoration: none;
   color: #2e4866;
+  margin-bottom: .5rem;
 }
 
 .active {
@@ -11,11 +12,14 @@
 }
 
 .subnav-link-container {
-  width: 70%;
-  margin: 0 auto;
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
-  padding: 1rem 0;
+ 
+  /* margin-bottom: 1rem; */
+}
 
+.nav {
+  margin: 1rem 0;
+ 
 }

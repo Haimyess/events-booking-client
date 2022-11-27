@@ -2,6 +2,7 @@
 
 // importing bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 // importing SWIPER
 // eslint-disable-next-line
@@ -49,6 +50,15 @@ import EventInfo from "./Pages/EventInfo";
 import Info from "./Pages/Info";
 import Feed from "./Pages/Feed";
 import PostPurchase from "./Pages/PostPurchase";
+
+// USER PROFILE
+import UserLayout from "./Pages/User/UserLayout";
+import UserProfile from "./Pages/User/UserProfile";
+import UserLikes from "./Pages/User/UserLikes";
+import UserPurchases from "./Pages/User/UserPurchases";
+import UserEvents from "./Pages/User/UserEvents";
+import UserEventLayout from "./Pages/User/UserEventLayout";
+import AddUserEvent from "./Pages/User/AddUserEvent";
 
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(false);
@@ -114,6 +124,20 @@ function App() {
               </UsersProvider>
             }
           />
+
+          {/* USER PROFILE */}
+
+          <Route path='/user/:userId' element={<UserLayout />}>
+            <Route index element={<UserProfile />} />
+            <Route path='likes' element={<UserLikes />} />
+            <Route path='purchases' element={<UserPurchases />} />
+            <Route path='my_events' element={<UserEventLayout />}>
+              <Route index element={<UserEvents />} />
+              <Route path='new_event' element={<AddUserEvent />} />
+            </Route>
+          </Route>
+
+          {/* EVENT PAGE */}
 
           <Route
             path='/event/:name'

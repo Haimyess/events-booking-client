@@ -16,7 +16,10 @@ export const CategoriesProvider = ({ children }) => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const res = await fetch(`/api/events/category/${params.type}`);
+        const res = await fetch(
+          `https:/booking-server.onrender.com/api/events/category/${params.type}`
+          // `/api/events/category/${params.type}`
+        );
         const data = await res.json();
 
         setCategories(data);

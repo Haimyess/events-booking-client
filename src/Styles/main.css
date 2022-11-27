@@ -3,15 +3,16 @@ main {
     margin: 0;
 }
 
-.home-wrapper {
+/* .home-wrapper {
     width: 70%;
     margin: 0 auto;
-}
+} */
 
 .home-section {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding-left: 1rem;
     /* border: 2px solid red; */
 
 }
@@ -23,7 +24,7 @@ main {
 }
 
 .banner-container {
-    margin:  3rem 0;
+    margin: 0 0 3rem 0 ;
       
 }
 
@@ -75,6 +76,11 @@ main {
 
 .mySwiper {
     height: 37vh;
+}
+
+.title-city-home {
+    padding-left: 1rem;
+    margin-top: 2rem;
 }
 
 /* Using the swiper module */

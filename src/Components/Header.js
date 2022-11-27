@@ -16,10 +16,9 @@ import SubNav from "./SubNav";
 import SearchBar from "./SearchBar";
 
 // Importing icons
-<link
-  rel='stylesheet'
-  href='https://fonts.googleapis.com/icon?family=Material+Icons'
-/>;
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 // -------------------------------------------
 // Testing the changing button login div based on boolean is log in or not
@@ -76,7 +75,11 @@ function Header() {
               <img className='logo' src={logo} />
             </Link>
             {/* Location button */}
-            <button>Tel Aviv</button>
+            <button className='btn-select-city'>
+              {" "}
+              <FontAwesomeIcon icon={faLocationDot} size='lg' />{" "}
+              <span className='text-select-city'> Tel Aviv</span>
+            </button>
           </div>
           {/* Search */}
           <div className='header-center'>
@@ -92,9 +95,9 @@ function Header() {
               <LoginNav />
             ) : (
               <div className='login-btns'>
-                <Link className='join-btn' to='/register'>
+                {/* <Link className='join-btn' to='/register'>
                   Join
-                </Link>
+                </Link> */}
                 <Link className='login-btn' to='/login'>
                   Login
                 </Link>
@@ -104,7 +107,7 @@ function Header() {
 
           {/* Sub navbar */}
         </div>
-        <hr className='line' />
+        {/* <hr className='line' /> */}
         <nav className='nav'>
           <SubNav />
         </nav>

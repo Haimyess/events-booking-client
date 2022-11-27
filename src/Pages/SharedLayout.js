@@ -6,14 +6,14 @@ import { Outlet } from "react-router-dom";
 
 import Header from "../Components/Header";
 
-import Footer from "../Components/Footer";
+// import Footer from "../Components/Footer";
 
 function Home() {
   return (
     <>
       <Header />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

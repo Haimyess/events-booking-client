@@ -2,10 +2,11 @@
 
 import React from "react";
 import { Outlet } from "react-router";
-import EventSidebar from "../Components/EventSidebar";
 import Header from "../Components/Header";
+// import EventSidebar from "../Components/EventSidebar";
+
 import Event from "../Pages/Event";
-import Footer from "../Components/Footer";
+// import Footer from "../Components/Footer";
 import "../Styles/eventLayout.css";
 
 function EventLayout() {
@@ -16,9 +17,9 @@ function EventLayout() {
         <div className='event-layout-content'>
           <Event />
           <Outlet />
-          <Footer />
+          {/* <Footer /> */}
         </div>
-        <EventSidebar />
+        {/* <EventSidebar /> */}
       </div>
     </div>
   );

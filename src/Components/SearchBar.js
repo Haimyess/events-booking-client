@@ -89,7 +89,7 @@ function SearchBar() {
     <>
       <div className='search-wrapper'>
         <form className='search-form' onSubmit={handleSubmit}>
-          <SearchIcon sx={{ color: "#2e4866", marginLeft: ".5rem" }} />
+          <SearchIcon sx={{ color: "#b8b5b5", marginLeft: ".5rem" }} />
           <input
             onChange={(e) => handleSearch(e.target.value)}
             type='text'

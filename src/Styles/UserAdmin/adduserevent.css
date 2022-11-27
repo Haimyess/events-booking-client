@@ -1,0 +1,39 @@
+
+.add-event-form {
+    width: 50vw;
+    /* border: 1px solid red; */
+}
+.form-container {
+    border: 1px solid blue;
+    padding:  0 2rem;
+}
+.form-inputs {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* margin: 2rem; */
+}
+
+.label-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-area-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 1.5rem;
+}
+
+.add-btn {
+    text-align: center;
+}
+
+.inputs-group {
+    display: flex;
+    gap: 1rem;
+}

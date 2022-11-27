@@ -7,13 +7,17 @@ export const EventsContext = createContext();
 
 export const EventsProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getEvents = async () => {
       try {
-        const res = await fetch("/api/events/all");
+        const res = await fetch(
+          // "https://booking-server.onrender.com/api/events/all"
+          "/api/events/all"
+        );
         const data = await res.json();
-
+        setIsLoading(false);
         setEvents(data);
       } catch (err) {
         console.log(err);
@@ -23,7 +27,8 @@ export const EventsProvider = ({ children }) => {
     getEvents();
   }, [events]);
   return (
-    <EventsContext.Provider value={[events, setEvents]}>
+    <EventsContext.Provider
+      value={{ events, setEvents, isLoading, setIsLoading }}>
       {children}
     </EventsContext.Provider>
   );

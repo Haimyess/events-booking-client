@@ -105,11 +105,9 @@ function Event() {
                         {event.event_address}
                       </span>
                     </p>
-                    <ReadMoreEventInfo limit={200}>
-                      {event.event_info}
-                    </ReadMoreEventInfo>
                   </div>
                 </div>
+                ;
               </div>
             );
           })}
@@ -119,6 +117,11 @@ function Event() {
       {/* <aside className='event-sidebar'>
         <TicketsOptions />
       </aside> */}
+      {eventValue.map((info) => {
+        return (
+          <ReadMoreEventInfo limit={200}>{info.event_info}</ReadMoreEventInfo>
+        );
+      })}
     </div>
   );
 }

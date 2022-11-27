@@ -17,7 +17,11 @@ export const EventProvider = ({ children }) => {
   useEffect(() => {
     const getEvent = async () => {
       try {
-        const res = await fetch(`/api/events/event/${params.name}`);
+        const res = await fetch(
+          `/api/events/event/${params.name}`
+          // `https://booking-server.onrender.com/api/events/event/${params.name}`
+        );
+        // const res = await fetch(`/api/events/event/${params.name}`);
         const data = await res.json();
         // Check this part, becuae of this, i dont see all t events that have just one date. Im deleting them bassicaly in the frontend, not allowing them to show.
         const uniqueEvent = data.slice(data.length - 1).map((event) => event);

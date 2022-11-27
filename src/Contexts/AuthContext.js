@@ -4,9 +4,9 @@ import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
-  // const [auth, setAuth] = useState([]);
+  const [auth, setAuth] = useState([{ userName: "Haim", id: 1 }]);
   // I am doing this hardcoded. Changing to true and false inthe isloggedin. Later it will be the real functionality
-  const [isLoggedin, setIsLoggedIn] = useState(true);
+  const [isLoggedin, setIsLoggedIn] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
   //   useEffect(() => {
@@ -16,8 +16,8 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        // auth,
-        // setAuth,
+        auth,
+        setAuth,
         isLoggedin,
         setIsLoggedIn,
         showProfileDropdown,

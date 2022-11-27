@@ -19,17 +19,17 @@
     justify-content: space-between;
     text-align: center;
     align-items: baseline;
-    width: 70%;
+    /* width: 70%; */
     margin: 0 auto;
 }
 
 .wrapper {
     width: 100%;
     margin:  0 auto;
-    padding: 0%;
-    position: -webkit-sticky;
+    padding: 0 1rem;
+    /* position: -webkit-sticky;
     position:sticky;
-    top:0;
+    top:0; */
     z-index: 2;
     background-color: #fff;
    
@@ -56,12 +56,27 @@
 
 .business-link {
     font-weight: bold;
+    font-size: .9rem;
 
+}
+
+.business-link:hover {
+    color: #000;
+    opacity: 80%;
 }
 
 .login-btns > * {
     margin: 0 .3rem;
+    color: #000;
    
+}
+
+.login-btn {
+    border: .5px solid rgb(200, 200, 200);
+    border-radius: 20px;
+    font-size: .9rem;
+    padding: .5rem 1rem;
+    transition: .3s;
 }
 
 .login-nav {
@@ -79,4 +94,28 @@
     padding: 0 10px;
     border-radius: 20px;
     background-color: rgb(245, 245, 245);
+}
+
+.btn-select-city {
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-left: 1rem;
+    padding:  .3rem 1rem;
+    transition: .3s;
+}
+
+.btn-select-city:hover, .login-btn:hover {
+    background-color: #eaeaea;
+
+}
+
+.login-btn:hover  {
+    color: #000;
+
+}
+
+.text-select-city {
+    margin-left: .2rem;
+
 }

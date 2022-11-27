@@ -32,7 +32,10 @@ export default function Main() {
   useEffect(() => {
     const eventsHome = async () => {
       try {
-        const res = await fetch("/api/events/all");
+        const res = await fetch(
+          "/api/events/all"
+          // "https://booking-server.onrender.com/api/events/all"
+        );
         const data = await res.json();
         setEvents(data);
       } catch (err) {
@@ -43,7 +46,8 @@ export default function Main() {
     eventsHome();
   }, []);
   return (
-    <div>
+    <div className=''>
+      <h2 className='title-city-home'>Events in Tel Aviv</h2>
       {/* -------------------------- */}
       {/* ------- Banner Adds------- */}
       {/* -------------------------- */}

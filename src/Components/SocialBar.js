@@ -26,21 +26,21 @@ function SocialBar() {
       </div>
       <div className='social'>
         <button className='event-social-icon'>
-          <FontAwesomeIcon icon={faShare} />{" "}
-          <span className='event-icon-text'>Share</span>
-        </button>
-        <button className='event-social-icon'>
           <FontAwesomeIcon icon={faHeart} />
           <span className='event-icon-text'>Like</span>
         </button>
         <button className='event-social-icon'>
+          <FontAwesomeIcon icon={faShare} />{" "}
+          <span className='event-icon-text'>Share</span>
+        </button>
+        {/* <button className='event-social-icon'>
           <FontAwesomeIcon icon={faCircleCheck} />
           <span className='event-icon-text'>Going</span>
         </button>
         <button className='event-social-icon'>
           <FontAwesomeIcon icon={faPaperPlane} />
           <span className='event-icon-text'>Invite</span>
-        </button>
+        </button> */}
       </div>
     </nav>
   );

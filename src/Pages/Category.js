@@ -41,7 +41,10 @@ const Category = () => {
   // console.log(category === categoryData);
   const getCategories = async () => {
     try {
-      const res = await fetch(`/api/events/category/${params.type}`);
+      const res = await fetch(
+        // `https:/booking-server.onrender.com/api/events/category/${params.type}`
+        `/api/events/category/${params.type}`
+      );
       const data = await res.json();
 
       // ------------------------------------------
@@ -185,7 +188,9 @@ const Category = () => {
         {/* Creating the event cards */}
         <div className='event-card-wrapper'>
           {filteredCategory.map((event) => {
-            const date = format(parseISO(event.event_day), " eee dd MMM", 1);
+            {
+              /* const date = format(parseISO(event.event_day), " eee dd MMM", 1); */
+            }
             console.log(typeof date);
             return <EventCard key={event.event_id} date={date} event={event} />;
           })}
