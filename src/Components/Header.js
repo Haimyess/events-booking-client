@@ -62,8 +62,9 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 // -------------------------------------------
 
 function Header() {
-  const { isLoggedin, setIsLoggedIn } = useContext(AuthContext);
-
+  const { isLoggedin, setIsLoggedIn, auth } = useContext(AuthContext);
+  console.log(isLoggedin);
+  console.log(auth);
   return (
     <>
       <div className='wrapper'>

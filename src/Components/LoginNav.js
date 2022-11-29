@@ -3,6 +3,8 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 
+import { Link } from "react-router-dom";
+
 // Material UI
 
 import Box from "@mui/material/Box";
@@ -16,6 +18,7 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 
 function LoginNav() {
   const {
+    auth,
     isLoggedin,
     setIsLoggedIn,
     showProfileDropdown,
@@ -31,9 +34,10 @@ function LoginNav() {
     <>
       <div className='login-nav'>
         <input
+          className='logged-user-btn'
           type='button'
-          value='User'
-          onClick={() => setShowProfileDropdown(true)}
+          value={`Hello, ${auth[0].user_name}`}
+          onClick={() => setShowProfileDropdown((prev) => !prev)}
         />
         <div className='login-nav-container'>
           {showProfileDropdown ? (
@@ -52,27 +56,27 @@ function LoginNav() {
                         <ListItemIcon>
                           <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary='Profile' />
+                        <Link to={`/user/${auth[0].user_id}`}>Profile</Link>
                       </ListItemButton>
                     </ListItem>
                     {/* Calendar */}
-                    <ListItem disablePadding>
+                    {/* <ListItem disablePadding>
                       <ListItemButton>
                         <ListItemIcon>
                           <DraftsIcon />
                         </ListItemIcon>
                         <ListItemText primary='Calendar' />
-                      </ListItemButton>
-                    </ListItem>
+                      </ListItemButton> */}
+                    {/* </ListItem> */}
                     {/* Your events */}
-                    <ListItem disablePadding>
+                    {/* <ListItem disablePadding>
                       <ListItemButton>
                         <ListItemIcon>
                           <DraftsIcon />
                         </ListItemIcon>
                         <ListItemText primary='Your events' />
                       </ListItemButton>
-                    </ListItem>
+                    </ListItem> */}
                     {/* Logout */}
                     <ListItem disablePadding>
                       <ListItemButton>

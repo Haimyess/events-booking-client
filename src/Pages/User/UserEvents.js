@@ -21,9 +21,10 @@ function UserEvents() {
 
   const getEventsByProducer = async () => {
     try {
-      const url = `api/events/${params.userId}`;
-      const res = axios.get(url);
-      setEventsById(res);
+      // const url = "/api/events/by/1";
+      const url = `/api/events/by/${params.userId}`;
+      const res = await axios.get(url);
+      setEventsById(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -32,6 +33,22 @@ function UserEvents() {
   useEffect(() => {
     getEventsByProducer();
   }, []);
+
+  console.log(eventsById);
+
+  const tableCells = [
+    "Type",
+    "Id",
+    "Sub Category",
+    "Name",
+    "Date start",
+    "Date end",
+    // "Time",
+    // "Info",
+    // "Address",
+    "City",
+    "Price",
+  ];
   return (
     <div>
       <h2>User Events</h2>
@@ -43,27 +60,31 @@ function UserEvents() {
         <Table sx={{ minWidth: 650 }} aria-label='simple table'>
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align='right'>Calories</TableCell>
-              <TableCell align='right'>Fat&nbsp;(g)</TableCell>
-              <TableCell align='right'>Carbs&nbsp;(g)</TableCell>
-              <TableCell align='right'>Protein&nbsp;(g)</TableCell>
+              {tableCells.map((cell) => {
+                return <TableCell>{cell}</TableCell>;
+              })}
             </TableRow>
           </TableHead>
           <TableBody>
-            {/* {rows.map((row) => (
+            {eventsById?.map((event) => (
               <TableRow
-                key={row.name}
+                key={event.event_id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell component='th' scope='row'>
-                  {row.name}
+                  {event.event_type}
                 </TableCell>
-                <TableCell align='right'>{row.calories}</TableCell>
-                <TableCell align='right'>{row.fat}</TableCell>
-                <TableCell align='right'>{row.carbs}</TableCell>
-                <TableCell align='right'>{row.protein}</TableCell>
+                <TableCell align='right'>{event.event_id}</TableCell>
+                <TableCell align='right'>{event.event_subcategory}</TableCell>
+                <TableCell align='right'>{event.event_name}</TableCell>
+                <TableCell align='right'>{event.event_date_start}</TableCell>
+                <TableCell align='right'>{event.event_date_end}</TableCell>
+                {/* <TableCell align='right'>{event.event_time}</TableCell>
+                <TableCell align='right'>{event.event_info}</TableCell>
+                <TableCell align='right'>{event.event_address}</TableCell> */}
+                <TableCell align='right'>{event.event_city}</TableCell>
+                <TableCell align='right'>{event.event_price}</TableCell>
               </TableRow>
-            ))} */}
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

@@ -140,7 +140,7 @@ function App() {
           {/* EVENT PAGE */}
 
           <Route
-            path='/event/:name'
+            path='/event/:eventName'
             element={
               <CartProvider>
                 <EventProvider>

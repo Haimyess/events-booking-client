@@ -59,8 +59,8 @@ export default function Main() {
             padding: "1rem",
           }}
           spaceBetween={50}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
           navigation={true}
           slidesPerView={1.4}
           loop
@@ -89,9 +89,9 @@ export default function Main() {
       {/* -------------------------- */}
 
       <main>
-        {sections.map((section) => {
+        {sections.map((section, i) => {
           return (
-            <section className='home-section'>
+            <section key={i} className='home-section'>
               <h4 className='home-cat'>{section}</h4>
               <Swiper
                 style={{
@@ -101,8 +101,8 @@ export default function Main() {
                 }}
                 spaceBetween={0}
                 cssMode={true}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
+                // onSwiper={(swiper) => console.log(swiper)}
                 // navigation={true}
                 breakpoints={{
                   640: {

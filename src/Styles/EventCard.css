@@ -5,27 +5,67 @@
 
 .event-card-wrapper {
     display: flex ; 
+    flex-wrap: wrap;
 }
 
 .event-card { 
-    max-width: 250px;
+    /* max-width: 100%; */
+    width: 350px;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
     border-radius: 5px;
-    margin-right:  1rem;
+    margin-right:  2rem;
     background-clip: initial;
     background-color: rgb(255, 255, 255);
     outline-color: transparent;
     outline-style: solid;
     outline-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 10px, rgba(0, 0, 0, 0.03) 0px 0px 2px;    
+   
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 10px, rgba(0, 0, 0, 0.03) 0px 0px 2px;     */
 }
 
 .event-category-img {
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 350px;
     object-fit: cover;
+    border-radius: 20px;
+    /* opacity: 80%; */
 }
 
+.img-container {
+    position: relative;
+}
+
+.img-container > .like-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+    transition: .2s ease-in-out;
+}
+.img-container > .like-icon:hover  {
+   scale: 1.3;
+}
+
+.title-container {
+    height: 1rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  
+    /* padding: 1rem; */
+}
 .event-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+}
+
+.info-container {
+     color: #2e4866;
 }

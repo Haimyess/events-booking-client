@@ -94,6 +94,7 @@
     padding: 0 10px;
     border-radius: 20px;
     background-color: rgb(245, 245, 245);
+    z-index: 3;
 }
 
 .btn-select-city {
@@ -103,6 +104,16 @@
     margin-left: 1rem;
     padding:  .3rem 1rem;
     transition: .3s;
+}
+
+.logged-user-btn {
+    background-color: #fff;
+    border: none;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: .4rem;
+    transform: translateY(-6px);
+    font-size: .9rem;
 }
 
 .btn-select-city:hover, .login-btn:hover {
