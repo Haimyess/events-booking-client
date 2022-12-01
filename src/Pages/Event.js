@@ -10,7 +10,9 @@ import { EventContext } from "../Contexts/EventContext";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faShare } from "@fortawesome/free-solid-svg-icons";
+
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import "../Styles/event.css";
 import "../Styles/variables.css";
@@ -105,6 +107,14 @@ function Event() {
                         {event.event_address}
                       </span>
                     </p>
+                    <div>
+                      <button className='event-social-icon'>
+                        <FontAwesomeIcon icon={faHeart} />
+                      </button>
+                      <button className='event-social-icon'>
+                        <FontAwesomeIcon icon={faShare} />{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
                 ;
@@ -113,15 +123,15 @@ function Event() {
           })}
         </section>
       </main>
-      <SocialBar />
+      <SocialBar event={eventValue} />
       {/* <aside className='event-sidebar'>
         <TicketsOptions />
       </aside> */}
-      {eventValue.map((info) => {
-        return (
-          <ReadMoreEventInfo limit={200}>{info.event_info}</ReadMoreEventInfo>
-        );
-      })}
+      {/* {eventValue.map((info) => {
+        return ( */}
+      {/* <ReadMoreEventInfo limit={200}>{info.event_info}</ReadMoreEventInfo> */}
+      {/* );
+      })} */}
     </div>
   );
 }

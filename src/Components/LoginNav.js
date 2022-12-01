@@ -3,7 +3,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Material UI
 
@@ -19,15 +19,20 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 function LoginNav() {
   const {
     auth,
+    setAuth,
     isLoggedin,
     setIsLoggedIn,
     showProfileDropdown,
     setShowProfileDropdown,
   } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   function handleLogout() {
     setShowProfileDropdown((value) => !value);
     setIsLoggedIn(false);
+    setAuth(false);
+    navigate("/login");
   }
 
   return (

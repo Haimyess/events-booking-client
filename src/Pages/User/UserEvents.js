@@ -14,10 +14,15 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+// styles
+import "../../Styles/UserAdmin/userevents.css";
+
 function UserEvents() {
   const params = useParams();
 
   const [eventsById, setEventsById] = useState([]);
+
+  // console.log(eventsById);
 
   const getEventsByProducer = async () => {
     try {
@@ -34,7 +39,7 @@ function UserEvents() {
     getEventsByProducer();
   }, []);
 
-  console.log(eventsById);
+  // console.log(eventsById);
 
   const tableCells = [
     "Type",
@@ -51,43 +56,48 @@ function UserEvents() {
   ];
   return (
     <div>
-      <h2>User Events</h2>
-      <Link to='new_event'>New Event</Link>
+      <div className='newevent-wrap'>
+        <h2>Your Events</h2>
+        <Link to='new_event'>New Event</Link>
+      </div>
 
       {/* Table */}
-
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-          <TableHead>
-            <TableRow>
-              {tableCells.map((cell) => {
-                return <TableCell>{cell}</TableCell>;
-              })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {eventsById?.map((event) => (
-              <TableRow
-                key={event.event_id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                <TableCell component='th' scope='row'>
-                  {event.event_type}
-                </TableCell>
-                <TableCell align='right'>{event.event_id}</TableCell>
-                <TableCell align='right'>{event.event_subcategory}</TableCell>
-                <TableCell align='right'>{event.event_name}</TableCell>
-                <TableCell align='right'>{event.event_date_start}</TableCell>
-                <TableCell align='right'>{event.event_date_end}</TableCell>
-                {/* <TableCell align='right'>{event.event_time}</TableCell>
+      {!eventsById.length == 0 ? (
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                {tableCells.map((cell) => {
+                  return <TableCell>{cell}</TableCell>;
+                })}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {eventsById.map((event) => (
+                <TableRow
+                  key={event.event_id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                  <TableCell component='th' scope='row'>
+                    {event.event_type}
+                  </TableCell>
+                  <TableCell align='right'>{event.event_id}</TableCell>
+                  <TableCell align='right'>{event.event_subcategory}</TableCell>
+                  <TableCell align='right'>{event.event_name}</TableCell>
+                  <TableCell align='right'>{event.event_date_start}</TableCell>
+                  <TableCell align='right'>{event.event_date_end}</TableCell>
+                  {/* <TableCell align='right'>{event.event_time}</TableCell>
                 <TableCell align='right'>{event.event_info}</TableCell>
                 <TableCell align='right'>{event.event_address}</TableCell> */}
-                <TableCell align='right'>{event.event_city}</TableCell>
-                <TableCell align='right'>{event.event_price}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+                  <TableCell align='right'>{event.event_city}</TableCell>
+                  <TableCell align='right'>{event.event_price}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <p>You haven't created any event yet.</p>
+      )}
 
       {/* <button onClick={createEvent}>New event</button> */}
     </div>

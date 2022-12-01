@@ -1,12 +1,23 @@
+.tickets-main {
+    /* border: 2px solid #3333; */
+    margin: 1rem 3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 10px;
+}
 
 .tickets-title-container {
-    background-color: #2e4866;
-    color: #fff;
+    /* background-color: #2e4866; */
+    margin-top: 4rem;
+    width: 100%;
+    color: #2e4866;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+  
 }
 
 .tickets-title-ft-icon {
     text-align: center;
-    padding: .5rem;
+    padding: 1.5rem;
 }
 
 .tickets-title {
@@ -23,11 +34,12 @@
 
 .ticket-select {
     border: 1px solid #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     margin: 0 .6rem;
     border-radius: 10px;
     width: 5vw;
     transition: .3s;
+    color: #2e4866;
 }
 
 .ticket-select:hover {
@@ -48,10 +60,38 @@
 .ticket-buy-btn {
     width: 90%;
     border: none;
-    border-radius: 10px;
-    margin: .5rem 0;
-    padding: .7rem 0;
+    border-radius: 30px;
+    margin: .5rem 0 1rem 0;
+    padding: .5rem 0;
     color: #fff;
     background-color: #2e4866;
 
+}
+
+.event-tickets-qt {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 0 3rem;
+   margin: 1.5rem 0 0 0 ;
+}
+.ticket-qty-btn {
+
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    background-color: #2e4866;
+    color: #fff;
+
+
+
+}
+
+.disable-qty-btn {
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    color: #fff;
+    background-color: #79828c;
+    cursor: not-allowed;
 }

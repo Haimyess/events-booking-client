@@ -8,7 +8,12 @@
     height: auto;
 }
 
-.center {
+/* .center {
     text-align: center;
     margin: 1rem 0;
+} */
+
+.event-info-wrapper {
+    width: 80%;
+    margin-top: 2rem;
 }

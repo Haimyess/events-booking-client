@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-.event-wrapper {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+/* .event-wrapper { */
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
     
-}
+/* } */
 
 .main-wrapper {
     display:flex;
@@ -16,19 +16,20 @@
 
 .events-main-info {
     display: flex;
-    align-items: flex-start;
-    margin: 1rem;
+    align-items: center;
+    margin: 1rem 0;
 }
 
 .event-img-container {
-    width: 30vw;
-    margin-bottom: 2rem;
+    width: 40vw;
+    /* margin-bottom: 2rem; */
 }
 
 .event-img {
    object-fit: contain;
     border-radius: 10px;
-    width: 100%;
+    max-width: 100%;
+    width: 500px;
     height: 100%;
 
 }
@@ -42,10 +43,6 @@
     display: flex;
 }
 
-.tickets-main {
-    border: 2px solid #3333;
-    margin: 1rem 3rem;
-}
 
 .event-type {
     width: fit-content;

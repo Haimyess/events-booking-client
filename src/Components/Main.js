@@ -27,7 +27,7 @@ export default function Main() {
 
   // console.log(events);
 
-  const sections = ["Cinema", "Outdoor", "Festival", "Activities"];
+  const sections = ["Festival", "Activities", "Cinema", "Outdoor"];
 
   useEffect(() => {
     const eventsHome = async () => {
@@ -114,7 +114,7 @@ export default function Main() {
                     // spaceBetween: 40,
                   },
                   1024: {
-                    slidesPerView: 4.3,
+                    slidesPerView: 3,
                     // spaceBetween: 50,
                   },
                 }}

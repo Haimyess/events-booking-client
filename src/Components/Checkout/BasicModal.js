@@ -26,7 +26,8 @@ import {
 } from "mdb-react-ui-kit";
 // import id from "date-fns/esm/locale/id/index.js";
 
-function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
+function BasicModal({ toggle, toggleDisplay, tickets, event }) {
+  // function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
   // console.log(tickets);
   const form = useRef();
   const orderId = uuidv4();
@@ -40,12 +41,13 @@ function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
   // Navigation
   const navigate = useNavigate();
   // Variables
-  const eventPrice = selected.map((price) => price.event_price);
+  const eventPrice = event.map((price) => price.event_price);
+  // const eventPrice = selected.map((price) => price.event_price);
 
-  const eventDay = selected.map((date) => date.event_day).toString();
+  const eventDay = event.map((date) => date.event_day).toString();
   // console.log(eventDay);
 
-  const eventSelected = selected.map((name) => name.event_name);
+  const eventSelected = event.map((name) => name.event_name);
 
   const subTotal = tickets * eventPrice;
   const fees = 20;
@@ -66,7 +68,7 @@ function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
   //creatingTickets();
 
   // States
-  const [btnDisable, setBtnDisable] = useState(true);
+  // const [btnDisable, setBtnDisable] = useState(true);
 
   const [order, setOrder] = useState([]);
   const [ticketsArr, setTicketsArr] = useState([]);
@@ -195,7 +197,7 @@ function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
                   <div className='checkout-title-container'>
                     {/* {selectedEvent.map()} */}
 
-                    {selected.map((event) => {
+                    {event.map((event) => {
                       const date = format(
                         parseISO(event.event_day),
                         " eee dd MMM",
@@ -288,7 +290,7 @@ function BasicModal({ toggle, toggleDisplay, selected, tickets }) {
                       <p key={item}>{item}</p>
                     ))} */}
 
-                    {selected.map((event) => {
+                    {event.map((event) => {
                       return (
                         <>
                           <img

@@ -3,13 +3,16 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Header from "../Components/Header";
-// import EventSidebar from "../Components/EventSidebar";
+import EventSidebar from "../Components/EventSidebar";
 
 import Event from "../Pages/Event";
 // import Footer from "../Components/Footer";
 import "../Styles/eventLayout.css";
 
 function EventLayout() {
+  // const { event } = useContext(EventContext);
+  // const [eventValue, setEventValue] = event;
+
   return (
     <div className='event-layout-wrapper'>
       <Header />
@@ -19,7 +22,7 @@ function EventLayout() {
           <Outlet />
           {/* <Footer /> */}
         </div>
-        {/* <EventSidebar /> */}
+        <EventSidebar />
       </div>
     </div>
   );
