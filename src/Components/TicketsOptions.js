@@ -37,58 +37,69 @@ function TicketsOptions() {
     setCentredModal(!centredModal);
   }
 
+  // console.log(eventValue);
+
   return (
-    <div className='tickets-main'>
-      <div className='tickets-title-container'>
-        <h4 className='tickets-title-ft-icon'>
-          <FontAwesomeIcon icon={faCalendar} />
-          <span className='tickets-title'>Select your Tickets</span>
-        </h4>
-      </div>
+    <>
+      {
+        !eventValue[0]?.event_price == 0 ? (
+          <div className='tickets-main'>
+            <div className='tickets-title-container'>
+              <h4 className='tickets-title-ft-icon'>
+                <FontAwesomeIcon icon={faCalendar} />
+                <span className='tickets-title'>Select your Tickets</span>
+              </h4>
+            </div>
 
-      {/* <div className='ticket-select-wrapper'>{events.map(() => {})}</div> */}
+            {/* <div className='ticket-select-wrapper'>{events.map(() => {})}</div> */}
 
-      {/* Quantity ticket selection and checkout button */}
-      <div>
-        <div className='event-tickets-qt'>
-          <input
-            className={ticketNumber == 1 ? "disable-qty-btn" : "ticket-qty-btn"}
-            onClick={() => setTicketNumber(ticketNumber - 1)}
-            type='button'
-            value='-'
-            disabled={ticketNumber == 1 && true}
-          />
-          <p> {ticketNumber} ticket</p>
-          <input
-            className='ticket-qty-btn'
-            onClick={() => setTicketNumber(ticketNumber + 1)}
-            type='button'
-            value='+'
-          />
-        </div>
+            {/* Quantity ticket selection and checkout button */}
+            <div>
+              <div className='event-tickets-qt'>
+                <input
+                  className={
+                    ticketNumber == 1 ? "disable-qty-btn" : "ticket-qty-btn"
+                  }
+                  onClick={() => setTicketNumber(ticketNumber - 1)}
+                  type='button'
+                  value='-'
+                  disabled={ticketNumber == 1 && true}
+                />
+                <p> {ticketNumber} ticket</p>
+                <input
+                  className='ticket-qty-btn'
+                  onClick={() => setTicketNumber(ticketNumber + 1)}
+                  type='button'
+                  value='+'
+                />
+              </div>
 
-        <div className='ticket-buy-btn-container'>
-          <button
-            className='ticket-buy-btn'
-            onClick={() => {
-              toggleShow();
-            }}>
-            {uniquePrice * ticketNumber} $ - Buy tickets
-          </button>
-        </div>
-      </div>
+              <div className='ticket-buy-btn-container'>
+                <button
+                  className='ticket-buy-btn'
+                  onClick={() => {
+                    toggleShow();
+                  }}>
+                  {uniquePrice * ticketNumber} $ - Buy tickets
+                </button>
+              </div>
+            </div>
 
-      {/* <BasicModal
+            {/* <BasicModal
         toggle={{ centredModal, setCentredModal }}
         toggleDisplay={toggleShow}
         event={events[0]}
         tickets={ticketNumber}
       /> */}
-    </div>
-    // selected={selectedDate}
+          </div>
+        ) : (
+          ""
+        )
+        // selected={selectedDate}
+      }
+    </>
   );
 }
-
 export default TicketsOptions;
 
 // const [hours, setHours] = useState([]);
