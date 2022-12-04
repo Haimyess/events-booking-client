@@ -65,100 +65,103 @@ function App() {
 
   return (
     <EventsProvider>
-      <div className='app-container'>
-        <Routes>
-          <Route path='/' element={<SharedLayout />}>
-            <Route index element={<Home />} />
+      <>
+        <div className='app-container'>
+          <Routes>
+            <Route path='/' element={<SharedLayout />}>
+              <Route index element={<Home />} />
+
+              <Route
+                path='/category/:type'
+                element={
+                  <CategoriesProvider>
+                    {/* <Test /> */}
+                    <Category />
+                  </CategoriesProvider>
+                }
+              />
+
+              <Route path='/search' element={<SearchEvents />} />
+              {/* THIS IS THE ONE THAT WILL DISPLAY IN THE MAIN THE SPECIFIC TYPE OF EVENTS AND THEN WE WILL FILTER AND ADD BUTTONS, */}
+              {/* <Route path='/Events/:type' element={<Event />} /> */}
+              {/* <Route path='/EventsAll' element={<EventsAll />} /> */}
+              {/* <Route path='/Checkout' element={<Checkout />} /> */}
+              {/* Path to the sign in and log in */}
+              {/* Path to the company admin page  */}
+              {/* Path to the genrela admin page  */}
+            </Route>
+            {/* This is the one im using right now... */}
+
+            {/* ---------------------------*/}
+            {/* ----------DASHBOARD--------*/}
+            {/* ---------------------------*/}
+
+            <Route path='/admin' element={<GeneralAdmin />}>
+              <Route index element={<Overview />} />
+              <Route path='customers' element={<Customers />} />
+              <Route path='orders' element={<Orders />} />
+              <Route path='events' element={<EventsDash />}>
+                <Route index element={<EventsList />} />
+                <Route path='edit' element={<EditEvent />} />
+                <Route path='add' element={<AddEvent />} />
+              </Route>
+            </Route>
+
+            {/* LOGIN */}
 
             <Route
-              path='/category/:type'
+              path='/login'
               element={
-                <CategoriesProvider>
-                  {/* <Test /> */}
-                  <Category />
-                </CategoriesProvider>
+                <UsersProvider>
+                  <Login />
+                </UsersProvider>
               }
             />
 
-            <Route path='/search' element={<SearchEvents />} />
-            {/* THIS IS THE ONE THAT WILL DISPLAY IN THE MAIN THE SPECIFIC TYPE OF EVENTS AND THEN WE WILL FILTER AND ADD BUTTONS, */}
-            {/* <Route path='/Events/:type' element={<Event />} /> */}
-            {/* <Route path='/EventsAll' element={<EventsAll />} /> */}
+            {/* USER PROFILE */}
+
+            <Route path='/user/:userId' element={<UserLayout />}>
+              <Route index element={<UserProfile />} />
+              <Route path='likes' element={<UserLikes />} />
+              <Route path='purchases' element={<UserPurchases />} />
+              <Route path='my_events' element={<UserEventLayout />}>
+                <Route index element={<UserEvents />} />
+                <Route path='new_event' element={<AddUserEvent />} />
+              </Route>
+            </Route>
+
+            {/* EVENT PAGE */}
+
+            <Route
+              path='/event/:eventName'
+              element={
+                <CartProvider>
+                  <EventProvider>
+                    <EventLayout />
+                  </EventProvider>
+                </CartProvider>
+              }>
+              <Route index element={<EventInfo />} />
+              <Route path='info' element={<Info />} />
+              <Route path='feed' element={<Feed />} />
+            </Route>
+
+            <Route
+              path='/register'
+              element={
+                <UsersProvider>
+                  <Join />{" "}
+                </UsersProvider>
+              }
+            />
+
+            <Route path='/purchase/:order' element={<PostPurchase />} />
+            <Route path='*' element={<NotFound />} />
+
             {/* <Route path='/Checkout' element={<Checkout />} /> */}
-            {/* Path to the sign in and log in */}
-            {/* Path to the company admin page  */}
-            {/* Path to the genrela admin page  */}
-          </Route>
-          {/* This is the one im using right now... */}
-
-          {/* ---------------------------*/}
-          {/* ----------DASHBOARD--------*/}
-          {/* ---------------------------*/}
-
-          <Route path='/admin' element={<GeneralAdmin />}>
-            <Route index element={<Overview />} />
-            <Route path='customers' element={<Customers />} />
-            <Route path='orders' element={<Orders />} />
-            <Route path='events' element={<EventsDash />}>
-              <Route index element={<EventsList />} />
-              <Route path='edit' element={<EditEvent />} />
-              <Route path='add' element={<AddEvent />} />
-            </Route>
-          </Route>
-
-          {/* LOGIN */}
-
-          <Route
-            path='/login'
-            element={
-              <UsersProvider>
-                <Login />
-              </UsersProvider>
-            }
-          />
-          <Route
-            path='/register'
-            element={
-              <UsersProvider>
-                <Join />{" "}
-              </UsersProvider>
-            }
-          />
-
-          {/* USER PROFILE */}
-
-          <Route path='/user/:userId' element={<UserLayout />}>
-            <Route index element={<UserProfile />} />
-            <Route path='likes' element={<UserLikes />} />
-            <Route path='purchases' element={<UserPurchases />} />
-            <Route path='my_events' element={<UserEventLayout />}>
-              <Route index element={<UserEvents />} />
-              <Route path='new_event' element={<AddUserEvent />} />
-            </Route>
-          </Route>
-
-          {/* EVENT PAGE */}
-
-          <Route
-            path='/event/:eventName'
-            element={
-              <CartProvider>
-                <EventProvider>
-                  <EventLayout />
-                </EventProvider>
-              </CartProvider>
-            }>
-            <Route index element={<EventInfo />} />
-            <Route path='info' element={<Info />} />
-            <Route path='feed' element={<Feed />} />
-          </Route>
-
-          <Route path='/purchase/:order' element={<PostPurchase />} />
-          <Route path='*' element={<NotFound />} />
-
-          {/* <Route path='/Checkout' element={<Checkout />} /> */}
-        </Routes>
-      </div>
+          </Routes>
+        </div>
+      </>
     </EventsProvider>
   );
 }

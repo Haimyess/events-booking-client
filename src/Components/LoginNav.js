@@ -61,7 +61,11 @@ function LoginNav() {
                         <ListItemIcon>
                           <InboxIcon />
                         </ListItemIcon>
-                        <Link to={`/user/${auth[0].user_id}`}>Profile</Link>
+                        <Link
+                          to={`/user/${auth[0].user_id}`}
+                          onClick={setShowProfileDropdown((prev) => !prev)}>
+                          Profile
+                        </Link>
                       </ListItemButton>
                     </ListItem>
                     {/* Calendar */}

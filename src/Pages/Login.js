@@ -87,10 +87,15 @@ function Login() {
           </div>
           <p className='need-account-login'>
             Need an account? &nbsp;
-            <Link to='/register'>Sign up now</Link>
+            <Link className='signup-link' to='/register'>
+              Sign up now
+            </Link>
           </p>
           <p>
-            return to <Link to='/'>Home </Link>
+            return to{" "}
+            <Link className='go-home' to='/'>
+              Home{" "}
+            </Link>
           </p>
         </div>
       </div>

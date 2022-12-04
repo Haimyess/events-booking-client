@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { UsersContext } from "../Contexts/UsersContext";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+// Styles
+import "../Styles/join.css";
+import logo from "../Media/logo.png";
 
 function Join() {
   // The names of the states should be equal to the column name in the backend
@@ -42,46 +45,59 @@ function Join() {
   };
 
   return (
+    // Whole screen
     <div className='signup-wrapper'>
+      {/* Left side */}
       <div className='signup-form-wrapper'>
-        <h1>Sign up to OutlandLife</h1>
-        <div className='signup-form-container'>
-          <form onSubmit={addUser}>
-            Name:{" "}
-            <input
-              type='text'
-              value={user_name}
-              onChange={(e) => setUser_Name(e.target.value)}
-            />
-            E-mail:{" "}
-            <input
-              type='email'
-              value={user_email}
-              onChange={(e) => setUser_Email(e.target.value)}
-            />
-            Password:{" "}
-            <input
-              type='password'
-              value={user_password}
-              onChange={(e) => setUser_Password(e.target.value)}
-            />
-            <div>
-              <input type='checkbox' />
+        <div>
+          <div className='signup-form-container'>
+            <form onSubmit={addUser} className='join-form'>
+              <h2 className='join-title'>Create your free account</h2>
+              <label className='join-label'>Name:</label>
+              <input
+                className='join-input'
+                placeholder='Your name'
+                type='text'
+                value={user_name}
+                onChange={(e) => setUser_Name(e.target.value)}
+              />
+              <label className='join-label'>E-mail:</label>
+              <input
+                className='join-input'
+                placeholder='example@email.com'
+                type='email'
+                value={user_email}
+                onChange={(e) => setUser_Email(e.target.value)}
+              />
+              <label className='join-label'>Password:</label>
+              <input
+                className='join-input'
+                placeholder='Enter password'
+                type='password'
+                value={user_password}
+                onChange={(e) => setUser_Password(e.target.value)}
+              />
+              <button className='join-btn' type='submit'>
+                Create Account
+              </button>
+              <div>
+                <p className='agreement-text'>
+                  Creating an account means you’re okay with our{" "}
+                  <span>Terms of Service, Privacy Policy</span>, and our default{" "}
+                  <span>Notification Settings</span>.
+                </p>
+              </div>
+
               <p>
-                Creating an account means you’re okay with our{" "}
-                <span>Terms of Service, Privacy Policy</span>, and our default{" "}
-                <span>Notification Settings</span>.
+                Already a member? <Link to='/login'>Login</Link>
               </p>
-            </div>
-            <button type='submit'>Create Account</button>
-            <p>
-              Already a member? <Link to='/login'>Sign In</Link>
-            </p>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
+      {/* Right side */}
       <div className='signup-image'>
-        <img src='' alt='' />
+        <img src={logo} alt='' className='join-logo' />
       </div>
     </div>
   );

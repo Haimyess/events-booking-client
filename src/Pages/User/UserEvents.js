@@ -22,7 +22,7 @@ function UserEvents() {
 
   const [eventsById, setEventsById] = useState([]);
 
-  // console.log(eventsById);
+  console.log(eventsById);
 
   const getEventsByProducer = async () => {
     try {

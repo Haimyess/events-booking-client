@@ -24,6 +24,7 @@ function TicketsOptions() {
   // const [cart, setCart] = useContext(CartContext);
   const { event } = useContext(EventContext);
   const [eventValue, setEventValue] = event;
+  // console.log(eventValue[0].event_name);
 
   const [centredModal, setCentredModal] = useState(false);
 
@@ -50,9 +51,7 @@ function TicketsOptions() {
                 <span className='tickets-title'>Select your Tickets</span>
               </h4>
             </div>
-
             {/* <div className='ticket-select-wrapper'>{events.map(() => {})}</div> */}
-
             {/* Quantity ticket selection and checkout button */}
             <div>
               <div className='event-tickets-qt'>
@@ -84,13 +83,12 @@ function TicketsOptions() {
                 </button>
               </div>
             </div>
-
-            {/* <BasicModal
-        toggle={{ centredModal, setCentredModal }}
-        toggleDisplay={toggleShow}
-        event={events[0]}
-        tickets={ticketNumber}
-      /> */}
+            <BasicModal
+              toggle={{ centredModal, setCentredModal }}
+              toggleDisplay={toggleShow}
+              event={eventValue}
+              tickets={ticketNumber}
+            />
           </div>
         ) : (
           ""

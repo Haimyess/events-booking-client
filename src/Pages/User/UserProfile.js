@@ -40,8 +40,7 @@ function UserProfile() {
     isEdit === false && setEditName(nameFirstLetterUp);
   };
 
-  const handleEditProfile = async (e) => {
-    e.preventDefault();
+  const handleEditProfile = async () => {
     // const editUrl = "";
     // const response = await axios.put(editUrl);
 
@@ -64,7 +63,7 @@ function UserProfile() {
 
   useEffect(() => {
     handleEditProfile();
-  }, []);
+  }, [editName, editEmail, editPass]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

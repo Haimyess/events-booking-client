@@ -28,10 +28,17 @@ form > input {
 }
 
 .search-container {
-    border: 1px solid black;
-    opacity: 80%;
+    /* border: 1px solid black; */
+    /* opacity: 80%; */
+    border-radius: 20px;
     position: absolute;
-    background-color: azure;
+    top: 75px;
+    /* margin: 0 auto; */
+    transform: translate(-10px);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 30%;
+    padding-bottom: 2rem;
 }
 
 .search-event-wrapper {

@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router-dom";
 // import Tickets from "../components/Checkout/Tickets";
 // import { PDFDownloadLink } from "@react-18-pdf/renderer";
 
@@ -20,6 +20,7 @@ function PostPurchase({ data }) {
         <h2>Thank you for your purchase</h2>
         <p>Your order ID is: {location.state.purchase.orderId} </p>
         <p>You will recieve an email with deteails of your order.</p>
+        <Link to='/'>Go back</Link>
       </div>
 
       <section>

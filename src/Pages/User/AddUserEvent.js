@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 import { AuthContext } from "../../Contexts/AuthContext";
@@ -20,8 +20,9 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 function AddUserEvent() {
   const navigate = useNavigate();
+  const { userId } = useParams();
   const { auth } = useContext(AuthContext);
-  // console.log(auth[0].userName);
+  console.log(auth[0]);
   const [values, setValues] = useState({
     // cat: "",
     subcat: "",
@@ -31,6 +32,7 @@ function AddUserEvent() {
     city: "",
     info: "",
     time: "",
+
     // img: ''
   });
   const [selectedCat, setSelectedCat] = useState("");
@@ -95,11 +97,12 @@ function AddUserEvent() {
         event_city: values.city,
         event_price: values.price,
         event_img: auth[0].userName,
-        event_producer: auth[0].userName,
+        event_producer: auth[0].user_name,
+        event_producer_id: auth[0].user_id,
       },
     });
 
-    navigate("/user/1/my_events");
+    navigate(`/user/${userId}/my_events`);
 
     // POST
     // pass user id and event id
