@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { useParams } from "react-router-dom";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faShare } from "@fortawesome/free-solid-svg-icons";
@@ -13,18 +14,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../Styles/socialbar.css";
 
-function SocialBar({ event }) {
+function SocialBar() {
+  const params = useParams();
   return (
     <nav className='social-container'>
       <div className='tabs-social'>
-        <NavLink
-          className='tabs-social-link'
-          to='info'
-          state={{ currEvent: event }}>
+        <NavLink className='tabs-social-link' to={`/event/${params.eventName}`}>
+          {/* // state={{ currEvent: event }}> */}
           Information
         </NavLink>
-        <NavLink className='tabs-social-link' to='feed'>
-          Feed
+        <NavLink to='feed' className='tabs-social-link'>
+          Comments
         </NavLink>
       </div>
       {/* <div className='social'>

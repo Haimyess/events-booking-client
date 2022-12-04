@@ -8,7 +8,9 @@
 }
 
 .checkout-title-container {
-    border-bottom: 1px solid #9999
+    border-bottom: 1px solid #9999;
+    margin-top: 1rem;
+
 }
 
 .ticket-checkout-image {
@@ -28,17 +30,19 @@
 .summary-checkout {
     width: 350px;
     border-left: 1px solid #5555;
+    padding: 1rem;
 }
 
 .checkout-btn-container {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     border-top: 1px solid #5555;
     margin-top: 1rem;
 }
 
 .checkout-btn {
+  
     margin: 1.5rem 0;
     padding: .5rem 1rem;
     border: none;
@@ -60,4 +64,17 @@
     background-color:#73869c;
     color: #fff;
     cursor: not-allowed;
+}
+
+/* .modal-backdrop {
+    background-color: #000;
+} */
+
+.modal {
+    background-color: rgb(161, 159, 159, 0.7);
+    /* opacity: 90%; */
+}
+
+.inputs-group {
+    margin-bottom: 1rem;
 }

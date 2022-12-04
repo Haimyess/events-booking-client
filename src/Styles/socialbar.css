@@ -38,3 +38,8 @@
 .active {
     font-weight: bold;
 }
+
+.no-comments {
+    margin-top: 2rem;
+    padding-left: .5rem;
+}

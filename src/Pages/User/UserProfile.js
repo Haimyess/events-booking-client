@@ -40,7 +40,8 @@ function UserProfile() {
     isEdit === false && setEditName(nameFirstLetterUp);
   };
 
-  const handleEditProfile = async () => {
+  const handleEditProfile = async (e) => {
+    e.preventDefault();
     // const editUrl = "";
     // const response = await axios.put(editUrl);
 
@@ -61,9 +62,9 @@ function UserProfile() {
     setIsEdit(false);
   };
 
-  useEffect(() => {
-    handleEditProfile();
-  }, [editName, editEmail, editPass]);
+  // useEffect(() => {
+  //   handleEditProfile();
+  // }, [editName, editEmail, editPass]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -71,7 +72,7 @@ function UserProfile() {
     }, 3000);
 
     return () => clearTimeout(timeout);
-  }, [msg]);
+  }, [auth]);
 
   return (
     <div className='user-profile-wrapper'>
@@ -140,7 +141,7 @@ function UserProfile() {
             ""
           )}
         </div>
-        {msg ? <p>Update successful!</p> : ""}
+        {msg && <p>Update successful!</p>}
       </div>
     </div>
   );

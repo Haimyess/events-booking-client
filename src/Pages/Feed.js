@@ -6,7 +6,7 @@ function Feed() {
   return (
     <div className='center'>
       {/* Comments component */}
-      <p>No comment yet</p>
+      <p className='no-comments'>No comments yet</p>
     </div>
   );
 }

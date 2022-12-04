@@ -141,8 +141,8 @@ function App() {
                   </EventProvider>
                 </CartProvider>
               }>
-              <Route index element={<EventInfo />} />
-              <Route path='info' element={<Info />} />
+              <Route index element={<Info />} />
+              {/* <Route path='info' element={<Info />} /> */}
               <Route path='feed' element={<Feed />} />
             </Route>
 

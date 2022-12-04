@@ -202,9 +202,8 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
       <MDBModal
         show={centredModal}
         setShow={setCentredModal}
-        backdrop={false}
-        // disableBackdrop={true}
-      >
+        backdrop={true}
+        disableBackdrop={true}>
         <MDBModalDialog centered size='lg'>
           <MDBModalContent>
             <MDBModalBody className='p-0'>
@@ -236,13 +235,13 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
                     <form
                       ref={form}
                       onSubmit={handleSubmitCheckout}
-                      className='mb-1 '>
+                      className='mb-1 p-2'>
                       <h4>Contact Information</h4>
 
-                      {!auth.length <= 0 ? (
+                      {auth ? (
                         <div>
-                          <p>{auth.user_name}</p>
-                          <p>{auth.user_email}</p>
+                          <p>{auth[0].user_name}</p>
+                          <p>{auth[0].user_email}</p>
                         </div>
                       ) : (
                         <div>
@@ -275,20 +274,22 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
 
                       <h4>Payment</h4>
 
-                      <TextField
-                        id='outlined-basic'
-                        label='Card number'
-                        variant='outlined'
-                        name='client_card_num'
-                        onChange={handleDetails}
-                      />
-                      <TextField
-                        id='outlined-basic'
-                        label='Exp'
-                        variant='outlined'
-                        name='client_card_exp'
-                        onChange={handleDetails}
-                      />
+                      <div className='inputs-group'>
+                        <TextField
+                          id='outlined-basic'
+                          label='Card number'
+                          variant='outlined'
+                          name='client_card_num'
+                          onChange={handleDetails}
+                        />
+                        <TextField
+                          id='outlined-basic'
+                          label='Exp'
+                          variant='outlined'
+                          name='client_card_exp'
+                          onChange={handleDetails}
+                        />
+                      </div>
                       <TextField
                         id='outlined-basic'
                         label='CVV'
@@ -346,7 +347,9 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
                               <p>{fees}</p>
                             </div>
                             <div className='ticket-checkout-total'>
-                              <p>Total</p>
+                              <p>
+                                <strong>Total</strong>
+                              </p>
                               <p>{total}</p>
                             </div>
                           </div>
