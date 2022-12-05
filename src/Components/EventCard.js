@@ -17,8 +17,7 @@ function EventCard({ event }) {
                 
             */}
       <div className='event-card' key={event.event_id}>
-        <Link
-          to={`https:/booking-server.onrender.com/event/${event.event_name}`}>
+        <Link to={`/event/${event.event_name}`}>
           <div className='img-container'>
             <img
               className='event-category-img'
