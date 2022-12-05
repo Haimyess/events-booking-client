@@ -22,7 +22,7 @@ function Join() {
 
   const addUser = (e) => {
     e.preventDefault();
-    fetch("/api/users/register", {
+    fetch("https:/booking-server.onrender.com/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

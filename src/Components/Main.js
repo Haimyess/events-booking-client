@@ -33,8 +33,8 @@ export default function Main() {
     const eventsHome = async () => {
       try {
         const res = await fetch(
-          "/api/events/all"
-          // "https://booking-server.onrender.com/api/events/all"
+          // "/api/events/all"
+          "https://booking-server.onrender.com/api/events/all"
         );
         const data = await res.json();
         setEvents(data);

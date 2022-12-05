@@ -84,7 +84,7 @@ function AddUserEvent() {
 
     axios({
       method: "post",
-      url: "/api/events/add",
+      url: "https:/booking-server.onrender.com/api/events/add",
       data: {
         event_type: selectedCat,
         event_subcategory: values.subcat,

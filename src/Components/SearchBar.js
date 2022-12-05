@@ -23,7 +23,9 @@ function SearchBar() {
   useEffect(() => {
     const getallEvents = async () => {
       try {
-        const res = await fetch("/api/events/all");
+        const res = await fetch(
+          "https:/booking-server.onrender.com/api/events/all"
+        );
         const data = await res.json();
         // console.log(data);
 

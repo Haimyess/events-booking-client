@@ -18,8 +18,8 @@ export const EventProvider = ({ children }) => {
     const getEvent = async () => {
       try {
         const res = await fetch(
-          `/api/events/event/${params.eventName}`
-          // `https://booking-server.onrender.com/api/events/event/${params.name}`
+          // `/api/events/event/${params.eventName}`
+          `https://booking-server.onrender.com/api/events/event/${params.eventName}`
         );
         // const res = await fetch(`/api/events/event/${params.name}`);
         const data = await res.json();

@@ -22,7 +22,7 @@ function SearchEvents() {
     const getSearch = async () => {
       try {
         const res = await fetch(
-          `/api/events/search?q=${location.state.search}`
+          `https:/booking-server.onrender.com/api/events/search?q=${location.state.search}`
         );
         const data = await res.json();
 

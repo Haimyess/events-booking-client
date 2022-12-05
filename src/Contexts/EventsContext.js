@@ -13,8 +13,8 @@ export const EventsProvider = ({ children }) => {
     const getEvents = async () => {
       try {
         const res = await fetch(
-          // "https://booking-server.onrender.com/api/events/all"
-          "/api/events/all"
+          "https://booking-server.onrender.com/api/events/all"
+          // "/api/events/all"
         );
         const data = await res.json();
         setIsLoading(false);

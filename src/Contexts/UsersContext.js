@@ -9,7 +9,7 @@ export const UsersProvider = ({ children }) => {
 
   useEffect(() => {
     const getUsers = async () => {
-      const res = await fetch("/api/users/");
+      const res = await fetch("https:/booking-server.onrender.com/api/users/");
       const data = await res.json();
       setUsers(data);
     };
