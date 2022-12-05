@@ -26,7 +26,7 @@ function UserPurchases() {
   const getOrders = async () => {
     try {
       // const url = "/api/events/by/1";
-      const url = `/api/purchase/${params.userId}`;
+      const url = `https:/booking-server.onrender.com/api/purchase/${params.userId}`;
       const res = await axios.get(url);
       setOrdersById(res.data);
     } catch (err) {
