@@ -20,7 +20,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https:/booking-server.onrender.com/api/users/login", {
+    fetch("https://booking-server.onrender.com/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
