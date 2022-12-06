@@ -28,7 +28,8 @@ import {
 // import id from "date-fns/esm/locale/id/index.js";
 
 function BasicModal({ toggle, toggleDisplay, tickets, event }) {
-  const { auth } = useContext(AuthContext);
+  const { auth, loading, setLoading } = useContext(AuthContext);
+
   // console.log(auth);
 
   // console.log(toggle.centredModal);
@@ -238,12 +239,7 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
                       className='mb-1 p-2'>
                       <h4>Contact Information</h4>
 
-                      {auth ? (
-                        <div>
-                          <p>{auth[0].user_name}</p>
-                          <p>{auth[0].user_email}</p>
-                        </div>
-                      ) : (
+                      {auth.length < 1 ? (
                         <div>
                           <TextField
                             className='mb-3 mr-2'
@@ -269,6 +265,11 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
                             name='client_email'
                             onChange={handleDetails}
                           />
+                        </div>
+                      ) : (
+                        <div>
+                          <p>{auth && auth[0].user_name}</p>
+                          <p>{auth && auth[0].user_email}</p>
                         </div>
                       )}
 
