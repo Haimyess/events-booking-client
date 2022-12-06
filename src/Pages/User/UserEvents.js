@@ -27,7 +27,7 @@ function UserEvents() {
   const getEventsByProducer = async () => {
     try {
       // const url = "/api/events/by/1";
-      const url = `https:/booking-server.onrender.com/api/events/by/${params.userId}`;
+      const url = `https://booking-server.onrender.com/api/events/by/${params.userId}`;
       const res = await axios.get(url);
       setEventsById(res.data);
     } catch (err) {

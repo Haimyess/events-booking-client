@@ -51,7 +51,7 @@ function UserProfile() {
       user_password: editPass,
     };
 
-    const editUrl = `https:/booking-server.onrender.com/api/users/${userId}`;
+    const editUrl = `https://booking-server.onrender.com/api/users/${userId}`;
     const response = await axios.put(editUrl, edit);
     setAuth(response.data);
 
