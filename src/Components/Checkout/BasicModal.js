@@ -130,7 +130,7 @@ function BasicModal({ toggle, toggleDisplay, tickets, event }) {
     e.preventDefault();
 
     // POST ORDERS TABLE
-    fetch("/api/purchase/", {
+    fetch("https://booking-server.onrender.com/api/purchase/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
