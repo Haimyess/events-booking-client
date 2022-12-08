@@ -88,9 +88,9 @@ function Header() {
           </div>
           {/* Icons */}
           <div className='header-right'>
-            <a className='business-link' href='#'>
+            {/* <a className='business-link' href='#'>
               Businesses
-            </a>
+            </a> */}
 
             {isLoggedin ? (
               <LoginNav />
