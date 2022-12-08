@@ -17,7 +17,7 @@ export const CategoriesProvider = ({ children }) => {
     const getCategories = async () => {
       try {
         const res = await fetch(
-          `https:/booking-server.onrender.com/api/events/category/${params.type}`
+          `https://booking-server.onrender.com/api/events/category/${params.type}`
           // `/api/events/category/${params.type}`
         );
         const data = await res.json();
