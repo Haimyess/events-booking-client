@@ -39,6 +39,7 @@ form > input {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 30%;
     padding-bottom: 2rem;
+    z-index: 2;
 }
 
 .search-event-wrapper {
