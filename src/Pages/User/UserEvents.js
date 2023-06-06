@@ -37,7 +37,8 @@ function UserEvents() {
 
   useEffect(() => {
     getEventsByProducer();
-  }, []);
+    // I added it now the dependency.6/6/2023
+  }, [eventsById]);
 
   // console.log(eventsById);
 
@@ -62,7 +63,7 @@ function UserEvents() {
       </div>
 
       {/* Table */}
-      {!eventsById.length == 0 ? (
+      {!eventsById.length === 0 ? (
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label='simple table'>
             <TableHead>

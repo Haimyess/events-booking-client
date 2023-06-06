@@ -29,7 +29,7 @@ export const CategoriesProvider = ({ children }) => {
     };
 
     getCategories();
-  }, [categories, setCategories]);
+  }, [categories, setCategories, params.type]);
   return (
     <CategoriesContext.Provider value={[categories, setCategories]}>
       {children}

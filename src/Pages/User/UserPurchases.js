@@ -1,6 +1,6 @@
 /** @format */
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import axios from "axios";
 
@@ -36,7 +36,8 @@ function UserPurchases() {
 
   useEffect(() => {
     getOrders();
-  }, []);
+    // I added it now the dependency.6/6/2023
+  }, [ordersById]);
 
   // console.log(eventsById);
 
@@ -54,7 +55,7 @@ function UserPurchases() {
       </div>
 
       {/* Table */}
-      {!ordersById.length == 0 ? (
+      {!ordersById.length === 0 ? (
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label='simple table'>
             <TableHead>

@@ -5,6 +5,7 @@ import React, { useState, useContext } from "react";
 // import { Link } from "react-router-dom";
 
 // Styles
+import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 import "../Styles/subnav.css";
 import CategoryLink from "./CategoryLink";
@@ -12,13 +13,18 @@ import CategoryLink from "./CategoryLink";
 function SubNav() {
   const { events, setEvents, isLoading, setIsLoading } =
     useContext(EventsContext);
-
+  // console.log("subnav", events);
   // const eventType = "event_type";
 
   // Filter duplicates category type
-  const uniqueCategories = [
-    ...new Map(events.map((unique) => [unique["event_type"], unique])).values(),
-  ];
+  const uniqueCategories =
+    !events.length > 0
+      ? "loading"
+      : [
+          ...new Map(
+            events.map((unique) => [unique["event_type"], unique])
+          ).values(),
+        ];
 
   // const categories = events.event_type;
 
@@ -39,10 +45,15 @@ function SubNav() {
   // }
   return (
     <div className='subnav-link-container'>
-      {isLoading ? (
-        <Skeleton variant='text' width={30} height={10} />
+      {isLoading || !events.length > 0 ? (
+        <Box sx={{ width: 300, display: "flex", gap: 2 }}>
+          <Skeleton variant='text' width={100} height={15} />
+          <Skeleton variant='text' width={100} height={15} />
+          <Skeleton variant='text' width={100} height={15} />
+          <Skeleton variant='text' width={100} height={15} />
+        </Box>
       ) : (
-        uniqueCategories.map((event) => {
+        uniqueCategories?.map((event) => {
           return <CategoryLink key={event.event_id} events={event} />;
         })
       )}

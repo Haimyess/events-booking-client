@@ -17,6 +17,11 @@ main {
 
 }
 
+.skeleton-grid {
+    display: flex;
+    gap: 1rem;
+}
+
 
 .slide {
     -webkit-transform-origin-z: translateZ(0);
