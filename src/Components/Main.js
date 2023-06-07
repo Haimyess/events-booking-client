@@ -55,39 +55,35 @@ export default function Main() {
       {/* -------------------------- */}
 
       <div className='banner-container'>
-        {events.length === 0 ? (
-          <Skeleton variant='text' width={30} height={10} />
-        ) : (
-          <Swiper
-            style={{
-              margin: 0,
-              padding: "1rem",
-            }}
-            spaceBetween={50}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => console.log(swiper)}
-            navigation={true}
-            slidesPerView={1.4}
-            loop
-            // loop
-            pagination={{
-              dynamicBullets: true,
-            }}
-            modules={[Pagination, Navigation]}
-            className='mySwiper'>
-            <SwiperSlide className='slide'>
-              <img className='banner-img' src={beerfest} />
-            </SwiperSlide>
+        <Swiper
+          style={{
+            margin: 0,
+            padding: "1rem",
+          }}
+          spaceBetween={50}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+          navigation={true}
+          slidesPerView={1.4}
+          loop
+          // loop
+          pagination={{
+            dynamicBullets: true,
+          }}
+          modules={[Pagination, Navigation]}
+          className='mySwiper'>
+          <SwiperSlide className='slide'>
+            <img className='banner-img' src={beerfest} />
+          </SwiperSlide>
 
-            <SwiperSlide className='slide'>
-              <img className='banner-img' src={jazzFest} />
-            </SwiperSlide>
-            <SwiperSlide className='slide'>
-              <img className='banner-img' src={tlvMarathon} />
-            </SwiperSlide>
-            {/* <SwiperSlide className='slide'>Slide 2</SwiperSlide> */}
-          </Swiper>
-        )}
+          <SwiperSlide className='slide'>
+            <img className='banner-img' src={jazzFest} />
+          </SwiperSlide>
+          <SwiperSlide className='slide'>
+            <img className='banner-img' src={tlvMarathon} />
+          </SwiperSlide>
+          {/* <SwiperSlide className='slide'>Slide 2</SwiperSlide> */}
+        </Swiper>
       </div>
 
       {/* -------------------------- */}
